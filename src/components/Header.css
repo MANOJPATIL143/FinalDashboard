@@ -1,0 +1,23 @@
+.image1{
+    justify-content: first baseline
+   };
+   .image2{
+   display: flex;
+   justify-self:end;
+   
+   }
+   
+   body {
+       padding-top: 100px; /* Adjust the value as needed */
+       margin-top: 10;
+       
+     }
+     .h1{
+       scroll-padding-top:10px; 
+       scroll-margin-top: 10px; 
+      
+       
+     }
+     
+   
+   

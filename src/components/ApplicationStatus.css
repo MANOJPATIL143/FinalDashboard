@@ -1,0 +1,46 @@
+#customers{
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 150%;
+    left: 10%;
+}
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+    background-color: #ddd;
+}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #9e9dcc;
+    color: white;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: small;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+th {
+    color: white;
+}
