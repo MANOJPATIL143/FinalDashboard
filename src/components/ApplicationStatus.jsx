@@ -3,8 +3,8 @@ import "./ApplicationStatus.css";
 
 function ApplicationStatus() {
   return (
-    <div style={{ width: "50%", margin: "0 auto"}}>
-        <h6>Application Status</h6>
+    <div style={{ width: "50%", margin: "0 auto" }}>
+      <h6>Application Status</h6>
       <table id="customers">
         <thead>
           <tr>

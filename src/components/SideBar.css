@@ -12,32 +12,32 @@
 
 
     font-weight: 600;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
-   
-  
-  
-  .sidebar a {
+
+
+
+.sidebar a {
     color: #ecf0f1;
     display: flex;
     align-items: center;
     text-decoration: none;
     padding: 10px 0;
     width: 100%;
-  }
-  
-  .sidebar ul {
-    
-        list-style-type: none;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-  }
-  
-  
-  
-  .sidebar.pcoded-micon {
+}
+
+.sidebar ul {
+
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+
+.sidebar.pcoded-micon {
     display: inline-block;
     width: 30px;
     height: 30px;
@@ -47,15 +47,15 @@
     text-align: center;
     line-height: 30px;
     margin-right: 10px;
-  }
-  
-  .sidebar.pcoded-mtext {
+}
+
+.sidebar.pcoded-mtext {
     display: inline-block;
     vertical-align: top;
     line-height: 30px;
-  }
-  
-  .sidebar.pcoded-mcaret {
+}
+
+.sidebar.pcoded-mcaret {
     display: inline-block;
     width: 0;
     height: 0;
@@ -63,9 +63,9 @@
     border-right: 5px solid transparent;
     border-top: 5px solid #4680ff;
     margin-left: 5px;
-  }
-  
-  ul {
+}
+
+ul {
     list-style-type: none;
     padding: 0;
     display: flex;
@@ -73,51 +73,51 @@
     align-items: flex-start;
     margin-left: 0;
     text-decoration: none;
-  }
-  
-  
-  a {
-  
+}
+
+
+a {
+
     color: #ecf0f1;
     display: block;
     padding: 10px 0;
     text-decoration: none;
-  }
-  
-  
-  
-  .pcoded-micon {
+}
+
+
+
+.pcoded-micon {
     margin-right: 10px;
     color: white;
     background-size: 10px;
-  
-  }
-  
-  .pcoded-mtext {
+
+}
+
+.pcoded-mtext {
     color: black;
     align-items: flex-start;
     text-decoration: none;
     opacity: 1;
     visibility: visible;
     font-weight: bold;
-      
-  }
-  
-  .pcoded-mcaret {
+
+}
+
+.pcoded-mcaret {
     float: right;
     margin-right: 10px;
-  }
-  
-  .fullScreen {
+}
+
+.fullScreen {
     display: flex;
     margin: -20px;
     border: 2px solid;
     border-radius: 50%;
     padding: 5px;
     color: black;
-  
-  }
-  
-  .sidebar a {
+
+}
+
+.sidebar a {
     text-decoration: none;
-  }
+}

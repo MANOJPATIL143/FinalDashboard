@@ -6,8 +6,9 @@ import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 import { Button, Modal, Card } from "react-bootstrap"; // import Button and Modal from react-bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./DashBoard.css";
+import OnGoingProjects from "./OnGoingProjects";
 
-function DashBoard() {
+function DashBoard(props) {
   const [showModal, setShowModal] = useState(false);
 
   const openModal = () => setShowModal(true);
@@ -458,7 +459,35 @@ function DashBoard() {
             <Card.Body>
               <table>
                 <tr>
-                  <p style={{ color: "#4680ff", fontSize: "medium" }}>
+                  <div
+                    style={{
+                      width: "60px",
+                      height: "60px",
+                      backgroundColor: "#4680ff",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      borderRadius: "5px",
+                      position: "absolute",
+                      top: "-25px",
+                      left: "5%",
+                    }}
+                  >
+                    <i
+                      className="fa fa-car"
+                      aria-hidden="true"
+                      style={{ color: "white", fontSize: "40px" }}
+                    ></i>
+                  </div>
+                  <p
+                    style={{
+                      color: "#4680ff",
+                      fontSize: "medium",
+                      marginRight: "-18%",
+                      fontWeight: "600",
+                      fontSize: "1.1em",
+                    }}
+                  >
                     Aplication Status
                   </p>
                 </tr>
@@ -492,7 +521,7 @@ function DashBoard() {
                   backgroundColor: " white",
                   opacity: " 0.5",
                 }}
-                //   onClick={openModal}
+                onClick={openModal}
               >
                 <i
                   class="fa fa-exclamation-triangle"
@@ -505,6 +534,20 @@ function DashBoard() {
           </Card>
         </div>
       </div>
+      <Modal show={showModal} onHide={closeModal} size="xl">
+        <Modal.Header closeButton></Modal.Header>
+        <Modal.Body>
+          <OnGoingProjects />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            style={{ backgroundColor: "white", color: "black" }}
+            onClick={closeModal}
+          >
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
 
       <div className="card2">
         <Card
@@ -514,7 +557,35 @@ function DashBoard() {
           <Card.Body>
             <table>
               <tr>
-                <p style={{ color: "#93BE52", fontSize: "medium" }}>
+                <div
+                  style={{
+                    width: "60px",
+                    height: "60px",
+                    backgroundColor: "#93BE52",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    borderRadius: "5px",
+                    position: "absolute",
+                    top: "-25px",
+                    left: "5%",
+                  }}
+                >
+                  <i
+                    className="fa fa-car"
+                    aria-hidden="true"
+                    style={{ color: "white", fontSize: "40px" }}
+                  ></i>
+                </div>
+                <p
+                  style={{
+                    color: "#93BE52",
+                    fontSize: "medium",
+                    marginRight: "-18%",
+                    fontWeight: "600",
+                    fontSize: "1.1em",
+                  }}
+                >
                   Ongoing Projects
                 </p>
               </tr>
@@ -548,7 +619,7 @@ function DashBoard() {
                 backgroundColor: " white",
                 opacity: " 0.5",
               }}
-              //   onClick={openModal}
+              onClick={openModal}
             >
               <i
                 class="fa fa-exclamation-triangle"
@@ -560,6 +631,20 @@ function DashBoard() {
           </Card.Body>
         </Card>
       </div>
+      <Modal show={showModal} onHide={closeModal} size="xl">
+        <Modal.Header closeButton></Modal.Header>
+        <Modal.Body>
+          {OnGoingProjects.calling ? <OnGoingProjects /> : "No data found"}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            style={{ backgroundColor: "white", color: "black" }}
+            onClick={closeModal}
+          >
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
 
       <div className="card4">
         <Card
@@ -569,8 +654,36 @@ function DashBoard() {
           <Card.Body>
             <table>
               <tr>
-                <p style={{ color: "orange", fontSize: "medium" }}>
-                  Total Find Status
+                <div
+                  style={{
+                    width: "60px",
+                    height: "60px",
+                    backgroundColor: "#FFB64D",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    borderRadius: "5px",
+                    position: "absolute",
+                    top: "-25px",
+                    left: "5%",
+                  }}
+                >
+                  <i
+                   className="fas fa-chart-pie"
+                    aria-hidden="true"
+                    style={{ color: "white", fontSize: "35px" }}
+                  ></i>
+                </div>
+                <p
+                  style={{
+                    color: "orange",
+                    fontSize: "medium",
+                    marginRight: "-39%",
+                    fontWeight: "600",
+                    fontSize: "1.1em",
+                  }}
+                >
+                  Total Fund Status
                 </p>
               </tr>
               <tr>
@@ -599,7 +712,7 @@ function DashBoard() {
                 backgroundColor: " white",
                 opacity: " 0.5",
               }}
-              //   onClick={openModal}
+              onClick={openModal}
             >
               <i
                 class="fa fa-exclamation-triangle"
@@ -611,6 +724,18 @@ function DashBoard() {
           </Card.Body>
         </Card>
       </div>
+      <Modal show={showModal} onHide={closeModal} size="xl">
+        <Modal.Header closeButton></Modal.Header>
+        <Modal.Body></Modal.Body>
+        <Modal.Footer>
+          <Button
+            style={{ backgroundColor: "white", color: "black" }}
+            onClick={closeModal}
+          >
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
       <div className="card5">
         <div id="chartdiv1" style={{ width: "100%", height: "280px" }}></div>
       </div>

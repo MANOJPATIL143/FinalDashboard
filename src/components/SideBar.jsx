@@ -26,14 +26,14 @@ const Sidebar = () => {
   };
 
   return (
-    <div className ={`sidebar ${isSidebarVisible ? "" : "hidden"}`}>
+    <div className={`sidebar ${isSidebarVisible ? "" : "hidden"}`}>
       {/* <button onClick={toggleSidebar}>Menu</button> */}
       <div>
         <button
           style={{
             position: "absolute",
-            top: '10%',
-            right: '25px',
+            top: "10%",
+            right: "25px",
             transform: "translateY(-50%)",
           }}
           className="fullScreen"
@@ -43,39 +43,40 @@ const Sidebar = () => {
         </button>
       </div>
       <ul>
-      <li>
-  <Link to="/dashboard">
-    <span class="pcoded-micon">
-      <i
-        style={{
-          backgroundColor: "#4680ff",
-          padding: "5px",
-          border: "1px solid #4680ff",
-          borderRadius: "15%",
-        }}
-        class="fas fa-bookmark" aria-hidden="true"
-      ></i>
-      <b></b>
-    </span>
-    <span class="pcoded-mtext" data-i18n="nav.dash.main">
-      Dashboard
-    </span>
-    <span class="pcoded-mcaret"></span>
-  </Link>
-</li>
-
+        <li>
+          <Link to="/dashboard">
+            <span class="pcoded-micon">
+              <i
+                style={{
+                  backgroundColor: "#4680ff",
+                  padding: "5px",
+                  border: "1px solid #4680ff",
+                  borderRadius: "15%",
+                }}
+                class="fas fa-bookmark"
+                aria-hidden="true"
+              ></i>
+              <b></b>
+            </span>
+            <span class="pcoded-mtext" data-i18n="nav.dash.main">
+              Dashboard
+            </span>
+            <span class="pcoded-mcaret"></span>
+          </Link>
+        </li>
 
         <li>
-        <Link to="/applicationstatus">
+          <Link to="/applicationstatus">
             <span class="pcoded-micon">
-            <i
+              <i
                 style={{
                   backgroundColor: "#FC6180",
                   padding: "5px",
                   border: "1px solid #FC6180",
                   borderRadius: "15%",
                 }}
-                class="fas fa-home" aria-hidden="true"
+                class="fas fa-home"
+                aria-hidden="true"
               ></i>
               <b></b>
             </span>
@@ -87,16 +88,17 @@ const Sidebar = () => {
         </li>
 
         <li>
-        <Link to="/ongoingprojects">
+          <Link to="/ongoingprojects">
             <span class="pcoded-micon">
-             <i
+              <i
                 style={{
                   backgroundColor: "#93BE52",
                   padding: "5px",
                   border: "1px solid #93BE52",
                   borderRadius: "15%",
                 }}
-                class="fa fa-tasks" aria-hidden="true"
+                class="fa fa-tasks"
+                aria-hidden="true"
               ></i>
               <b></b>
             </span>
@@ -104,62 +106,66 @@ const Sidebar = () => {
               On-Going Projects
             </span>
             <span class="pcoded-mcaret"></span>
-         </Link>
+          </Link>
         </li>
 
         <li>
-        <Link to="/utilizationstate">
+          <Link to="/utilizationstate">
             <span class="pcoded-micon">
-            <i
+              <i
                 style={{
                   backgroundColor: "orange",
                   padding: "5px",
                   border: "1px solid orange",
                   borderRadius: "15%",
                 }}
-                class="fa fa-adjust" aria-hidden="true"
+                class="fa fa-adjust"
+                aria-hidden="true"
               ></i>
               <b></b>
             </span>
             <span class="pcoded-mtext" data-i18n="nav.dash.main">
-              State/UTs Utilization<br/> Certificate
+              State/UTs Utilization
+              <br /> Certificate
             </span>
             <span class="pcoded-mcaret"></span>
           </Link>
         </li>
 
         <li>
-        <Link to="/operationalstatistics">
+          <Link to="/operationalstatistics">
             <span class="pcoded-micon">
-            <i
+              <i
                 style={{
                   backgroundColor: "#ab7967",
                   padding: "5px",
                   border: "1px solid #ab7967",
                   borderRadius: "15%",
                 }}
-                class="fa fa-server" aria-hidden="true"
+                class="fa fa-server"
+                aria-hidden="true"
               ></i>
               <b></b>
             </span>
             <span class="pcoded-mtext" data-i18n="nav.dash.main">
-            Operational Statistics/Implementation
+              Operational Statistics/Implementation
             </span>
             <span class="pcoded-mcaret"></span>
           </Link>
         </li>
 
         <li>
-        <Link to="/nicprogress">
+          <Link to="/nicprogress">
             <span class="pcoded-micon">
-            <i
+              <i
                 style={{
                   backgroundColor: "#39ADB5",
                   padding: "5px",
                   border: "1px solid #39ADB5",
                   borderRadius: "15%",
                 }}
-                class="fa fa-map" aria-hidden="true"
+                class="fa fa-map"
+                aria-hidden="true"
               ></i>
               <b></b>
             </span>

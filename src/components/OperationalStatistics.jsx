@@ -6,7 +6,7 @@ function ApplicationStatus() {
     <div>
       <div style={{ width: "50%", margin: "0 auto" }}>
         <table id="customers">
-        <h6>Operational Statistics / Implementation </h6>
+          <h6>Operational Statistics / Implementation </h6>
           <thead>
             <tr>
               <th>SR NO</th>
