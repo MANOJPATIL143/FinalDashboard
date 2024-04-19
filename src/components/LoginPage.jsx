@@ -4,7 +4,7 @@ import image from "../assets/Morthicon.jpeg";
 import "./LoginPage.css";
 
 
-const Auth = () => {
+const Auth = ({setLoggedIn}) => {
   const [authMode, setAuthMode] = useState("signin");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -16,6 +16,8 @@ const Auth = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
+    localStorage.setItem('login',username)
+    setLoggedIn(true)
     console.log(
       "Logging in with username:",
       username,
@@ -26,6 +28,7 @@ const Auth = () => {
     // Hard-coded data
     const validUsername = "admin";
     const validPassword = "admin@123";
+
   
     if (username === validUsername && password === validPassword) {
         navigate("/dashboard");
@@ -38,52 +41,53 @@ const Auth = () => {
 
   if (authMode === "signin") {
     return (
-      <div className="Auth-form-container">
-        <form className="Auth-form" onSubmit={handleLogin}>
-          <div className="Auth-form-content">
-            <img src={image} alt="" width="50" height="50" />
-            <p className="Auth-form-title">
-              Central Dashboard <br /> Tracking Process of State Wise Tracking
-              Platform for Safety <br /> Enforcement of AIS 140 Specification
-            </p>
-             {/* <div className="text-center">
+      <div className="Auths-form-container">
+      <form className="Auth-form" onSubmit={handleLogin}>
+        <div className="Auth-form-content">
+          <img src={image} alt="" width="50" height="50" />
+          <p className="Auth-form-title">
+            Central Dashboard <br /> Tracking Process of State Wise Tracking
+            Platform for Safety <br /> Enforcement of AIS 140 Specification
+          </p>
+          {/* <div className="text-center">
               Not registered yet?{" "}
               <span className="link-primary" onClick={changeAuthMode}>
                 Sign Up
               </span>
             </div> */}
-            <div className="form-group mt-3">
-              <label>USERNAME</label>
-              <br />
-              <input
-                type="username"
-                className="form-control mt-1"
-                placeholder="Enter Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-            </div>
+          <div className="formss-group mt-3">
+            <label>USERNAME</label>
             <br />
-
-            <div className="form-group1 mt-3">
-              <label>PASSWORD</label>
-              <br />
-              <input
-                type="password"
-                className="form-control mt-1"
-                placeholder="Enter password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
-            <div>
-              <button type="submit" class="btn btn-danger">
-                Sign In
-              </button>
-            </div>
+            <input
+              type="username"
+              className="inputtype"
+              placeholder="Enter Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
           </div>
-        </form>
-      </div>
+          <br />
+    
+          <div className="formss-group1 mt-3">
+            <label>PASSWORD</label>
+            <br />
+            <input
+              type="password"
+              className="inputtype"
+              placeholder="Enter password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div>
+            <button type="submit" className="signin">
+              Sign In
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
     );
   }
 

@@ -1,111 +1,99 @@
+.Auths-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #a8cfde;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; 
+  overflow: hidden; /* Prevent scrolling */
+}
 
-.Auth-form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(181, 233, 233);
-  }
-  
-  .Auth-form {
-    position: absolute;
-    top: 50px;
-    left: 30%;
-    width: 560px;
-    height:320px;
-    box-shadow: rgba(123, 123, 123, 0.56) 19px 17px 1px;
-    padding-top: 30px;
-    padding-bottom: 20px;
-    border-radius: 8px;
-    background-color: white;
-  }
-  
-  .Auth-form-content {
-    padding-left: 12%;
-    padding-right: 12%;
-  }
-  
-  .Auth-form-title {
-    position: absolute;
-    top: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 4em;
-    font-size: 12px;
-    color: rgb(34, 34, 34);
-    font-weight: 500;
-  }
-  
-  label {
-    font-size: 10px;
-    font-weight: 600;
-    color: rgb(34, 34, 34);
-  }
-  
-  p {
-    text-align: center; /* This will align the text in the center */
-    text-align: center; 
-    text-align: right;
-    text-align: justify;
-    margin-top: 10px; 
-    margin-bottom: 50px;
-    margin-left: 50px;
-    margin-right: 0px;
-  }
-  
-  
-  .form-group {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    position: absolute;
-    top: 150px;
-    left: 42%;
-    transform: translateX(-50%);
-    text-align: start;
-   }
-  
-   .form-group1 {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    position: absolute;
-    top: 210px;
-    left: 42%;
-    transform: translateX(-50%);
-    text-align: start;
-   }
-  
-  
-  .btn{
-    position: absolute;
-    top: 285px;
-    left: 63%;
-    transform: translateX(-50%);
-    text-align: start;
-    background-color: #d14b48;
-    border: none;
-    border-radius: 4px;
-    color: #fff;
-    padding: 0.4rem 0.3rem;
-    margin: 0.5rem;
-    font-size: 0.8rem;
-    cursor: pointer;
-  }
-  
-  input.form-control {
-    border: 1px solid #ccc;
-    border-color: #007bff;
-    transition: 0.4s;
-    border-radius: 3px;
-    padding: 0.5rem;
-    font-size: 0.7rem;
-    width: 280px;
-    background-color: #f9f9f9;
-    box-shadow: rgba(123, 123, 123, 0.56) 19px 100px 50px;
-  }
-  
-  
-  
-  
-  
+
+.Auth-form {
+  position: absolute;
+  top: 100px;
+  left: 30%;
+  width: 560px;
+  height: 350px;
+  box-shadow: rgba(123, 123, 123, 0.56) 19px 17px 1px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.Auth-form-content {
+  padding-left: 12%;
+  padding-right: 12%;
+}
+
+.Auth-form-title {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 4em;
+  font-size: 12px;
+  color: rgb(34, 34, 34);
+  font-weight: 500;
+}
+
+.formss-group {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  position: absolute;
+  top: 110px;
+  left: 42%;
+  transform: translateX(-50%);
+  text-align: start;
+}
+
+.formss-group1 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  position: absolute;
+  top: 180px;
+  left: 42%;
+  transform: translateX(-50%);
+  text-align: start;
+}
+
+.signin {
+  position: absolute;
+  top: 285px;
+  left: 60%;
+  transform: translateX(-50%);
+  text-align: start;
+  background-color: #d14b48;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  padding: 0.4rem 0.3rem;
+  margin: 0.5rem;
+  width: 10%;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+input.inputtype {
+  border: 1px solid #ccc;
+  border-color: #007bff;
+  transition: 0.4s;
+  border-radius: 3px;
+  padding: 0.5rem;
+  font-size: 0.7rem;
+  width: 280px;
+  background-color: #f9f9f9;
+  box-shadow: rgba(123, 123, 123, 0.56) 19px 100px 50px;
+}
+
+label {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgb(34, 34, 34);
+}
