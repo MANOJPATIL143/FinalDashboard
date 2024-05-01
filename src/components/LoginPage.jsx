@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+// import axios from "axios";
 import image from "../assets/Morthicon.jpeg";
 import "./LoginPage.css";
 
-
-const Auth = ({setLoggedIn}) => {
+const Auth = ({ setLoggedIn }) => {
   const [authMode, setAuthMode] = useState("signin");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -14,80 +14,92 @@ const Auth = ({setLoggedIn}) => {
     setAuthMode(authMode === "signin" ? "signup" : "signin");
   };
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    localStorage.setItem('login',username)
-    setLoggedIn(true)
+    localStorage.setItem("login", username);
+    setLoggedIn(true);
     console.log(
       "Logging in with username:",
       username,
       "and password:",
       password
     );
-  
+
     // Hard-coded data
     const validUsername = "admin";
     const validPassword = "admin@123";
 
-  
     if (username === validUsername && password === validPassword) {
-        navigate("/dashboard");
-        console.log("Login successful!");
-
+      navigate("/dashboard");
+      console.log("Login successful!");
     } else {
       console.log("Invalid username or password");
     }
+
+    //  try {
+    //    const response = await axios.post("http://192.168.1.184:8084/Morth_app_api/login", {
+    //      username,
+    //      password,
+    //    });
+
+    //    if (response.data.success) {
+    //      console.log("Login successful!");
+    //      // Add your logic here to handle successful login
+    //    }
+
+    //  } catch (error) {
+    //    console.error("Error:", error);
+    //  }
   };
 
   if (authMode === "signin") {
     return (
       <div className="Auths-form-container">
-      <form className="Auth-form" onSubmit={handleLogin}>
-        <div className="Auth-form-content">
-          <img src={image} alt="" width="50" height="50" />
-          <p className="Auth-form-title">
-            Central Dashboard <br /> Tracking Process of State Wise Tracking
-            Platform for Safety <br /> Enforcement of AIS 140 Specification
-          </p>
-          {/* <div className="text-center">
+        <form className="Auth-form" onSubmit={handleLogin}>
+          <div className="Auth-form-content">
+            <img src={image} alt="" width="50" height="50" />
+            <p className="Auth-form-title">
+              Central Dashboard <br /> Tracking Process of State Wise Tracking
+              Platform for Safety <br /> Enforcement of AIS 140 Specification
+            </p>
+            {/* <div className="text-center">
               Not registered yet?{" "}
               <span className="link-primary" onClick={changeAuthMode}>
                 Sign Up
               </span>
             </div> */}
-          <div className="formss-group mt-3">
-            <label>USERNAME</label>
+            <div className="formss-group mt-3">
+              <label>USERNAME</label>
+              <br />
+              <input
+                type="username"
+                className="inputtype"
+                placeholder="Enter Username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </div>
             <br />
-            <input
-              type="username"
-              className="inputtype"
-              placeholder="Enter Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
+
+            <div className="formss-group1 mt-3">
+              <label>PASSWORD</label>
+              <br />
+              <input
+                type="password"
+                className="inputtype"
+                placeholder="Enter password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+            <div>
+              <button type="submit" className="signin">
+                Sign In
+              </button>
+            </div>
           </div>
-          <br />
-    
-          <div className="formss-group1 mt-3">
-            <label>PASSWORD</label>
-            <br />
-            <input
-              type="password"
-              className="inputtype"
-              placeholder="Enter password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <div>
-            <button type="submit" className="signin">
-              Sign In
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
-    
+        </form>
+      </div>
     );
   }
 

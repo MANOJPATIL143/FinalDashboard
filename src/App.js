@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Route,
   Routes,
   Navigate,
 } from "react-router-dom";
+import { useTranslation } from "react-i18next"; // Import useTranslation hook
 import Header from "./components/Header";
 import Sidebar from "./components/SideBar";
 import Dashboard from "./components/DashBoard";
@@ -19,6 +20,8 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(
     localStorage.getItem("loggedIn") === "true"
   );
+  const [language, setLanguage] = useState("en"); // Default language is English
+  const { i18n } = useTranslation(); // Get i18n instance
 
   const handleLogin = () => {
     localStorage.setItem("loggedIn", "true");
@@ -31,6 +34,11 @@ function App() {
     window.location.href = "/login";
   };
 
+  const changeLanguage = (lng) => {
+    setLanguage(lng); // Update language state
+    i18n.changeLanguage(lng); // i18n will automatically handle the language change
+  };
+
   return (
     <Router>
       <>
@@ -41,7 +49,7 @@ function App() {
           />
           <Route
             path="/*"
-            element={<ProtectedRoutes loggedIn={loggedIn} handleLogout={handleLogout} />}
+            element={<ProtectedRoutes loggedIn={loggedIn} handleLogout={handleLogout} changeLanguage={changeLanguage} />}
           />
         </Routes>
       </>
@@ -49,13 +57,16 @@ function App() {
   );
 }
 
-const ProtectedRoutes = ({ loggedIn, handleLogout }) => {
+const ProtectedRoutes = ({ loggedIn, handleLogout, changeLanguage }) => {
+  const { t } = useTranslation(); // Get translation function
+
   if (!loggedIn) {
     return <Navigate to="/login" />;
   }
 
   return (
     <>
+      {/* <button onClick={() => changeLanguage("es")}>Switch to Spanish</button> Button to switch language */}
       <Header handleLogout={handleLogout} />
       <Sidebar />
       <Routes>

@@ -1,8 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import * as am5 from "@amcharts/amcharts5";
-import * as am5xy from "@amcharts/amcharts5/xy";
-import * as am5percent from "@amcharts/amcharts5/percent";
-import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
@@ -74,7 +70,7 @@ function DashBoard() {
     let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
     categoryAxis.dataFields.category = "country";
     categoryAxis.renderer.grid.template.location = 0;
-    categoryAxis.renderer.minGridDistance = 60;
+    categoryAxis.renderer.minGridDistance = 0;
     categoryAxis.tooltip.disabled = true;
     categoryAxis.tooltip.fontSize = -0.1;
     categoryAxis.renderer.labels.template.rotation = 300;
@@ -98,7 +94,6 @@ function DashBoard() {
     series.tooltip.fontSize = -0.1;
     series.columns.template.strokeWidth = -0.01;
     series.tooltip.fontSize = -0.1;
-
     series.tooltip.pointerOrientation = "vertical";
 
     series.columns.template.column.cornerRadiusTopLeft = 15;
@@ -166,12 +161,10 @@ function DashBoard() {
       {
         country: "India",
         visits: 1882,
-        color: "#63cdcf",
       },
       {
         country: "Japan",
         visits: 1882,
-        color: "#6373cf",
       },
       {
         country: "Germany",
@@ -211,6 +204,7 @@ function DashBoard() {
     let series = chart.series.push(new am4charts.ConeSeries());
     series.dataFields.valueY = "visits";
     series.dataFields.categoryX = "country";
+    series.columns.template.tooltipText = "{categoryX}: [bold]{valueY}[/]";
 
     let columnTemplate = series.columns.template;
     columnTemplate.adapter.add("fill", function (fill, target) {
@@ -236,30 +230,30 @@ function DashBoard() {
 
     // Create chart instance
     let chart = am4core.create("chartdiv2", am4charts.XYChart);
+
     // chart.scrollbarX = new am4core.Scrollbar();
 
     // Add data
     chart.data = [
       {
         country: "US",
-        visits: 3025,
-        color:("#daf7a6")
+        visits: 33,
       },
       {
         country: "Chi",
-        visits: 1882,
+        visits: 22,
       },
       {
         country: "Grm",
-        visits: 1322,
+        visits: 20,
       },
       {
         country: "UK",
-        visits: 1122,
+        visits: 11,
       },
       {
         country: "Ind",
-        visits: 984,
+        visits: 9,
       },
     ];
 
@@ -314,13 +308,27 @@ function DashBoard() {
 
     series.columns.template.column.cornerRadiusTopLeft = 50;
     series.columns.template.column.cornerRadiusTopRight = 50;
-    series.columns.template.column.fillOpacity = 10;
+    series.columns.template.column.fillOpacity = 500;
+
+    // Set up colors
+    series.columns.template.adapter.add("fill", function (fill, target) {
+      return chart.colors.getIndex(target.dataItem.index);
+    });
+
+    // Add color set
+    chart.colors.list = [
+      am4core.color("#daf7a6"),
+      am4core.color("#900c3f"),
+      am4core.color("#93e8e4"),
+      am4core.color("#7c2aca"),
+      am4core.color("#C70039"),
+    ];
 
     // on hover, make corner radiuses bigger
     let hoverState = series.columns.template.column.states.create("hover");
     hoverState.properties.cornerRadiusTopLeft = 50;
     hoverState.properties.cornerRadiusTopRight = 50;
-    hoverState.properties.fillOpacity = 1;
+    hoverState.properties.fillOpacity = 10;
 
     series.columns.template.adapter.add("fill", function (fill, target) {
       return chart.colors.getIndex(target.dataItem.index);
@@ -883,7 +891,7 @@ function DashBoard() {
                 fontSize: "14px",
               }}
             >
-            States Vehicles
+              States Vehicles
             </p>
             <div
               id="chartdiv1"
@@ -944,7 +952,7 @@ function DashBoard() {
           id="chartdiv2"
           style={{
             width: "400px",
-            height: "10%",
+            height: "5%",
             width: "80%",
             height: "273px",
             position: "absolute",

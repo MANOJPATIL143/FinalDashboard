@@ -1,12 +1,11 @@
-import React from 'react'
-import { Navigate } from 'react-router-dom'
+import React from "react";
+import { Navigate } from "react-router-dom";
 
-const LoginProtected = ({loggedIn, children}) => {
-    
-    if(!loggedIn){
-        return <Navigate to={'/login'} replace />
-    }
-  return children
-}
+const LoginProtected = ({ loggedIn, children }) => {
+  if (!loggedIn) {
+    return <Navigate to={"/login"} replace />;
+  }
+  return children;
+};
 
-export default LoginProtected
+export default LoginProtected;
